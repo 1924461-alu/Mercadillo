@@ -1,0 +1,130 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.landing-body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #fc7bac, #ffd4e4);
+  padding: 24px;
+}
+
+.landing {
+  width: 100%;
+  max-width: 700px;
+}
+
+.landing-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  text-align: center;
+}
+
+.landing-badge {
+  display: inline-block;
+  margin: 0 0 12px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: #ffe7f0;
+  color: #b51862;
+  font-weight: bold;
+}
+
+.landing-card h1 {
+  margin: 0 0 14px;
+  font-size: 2rem;
+}
+
+.landing-text {
+  margin: 0 0 24px;
+  color: #444;
+  line-height: 1.5;
+}
+
+.landing-button,
+.volver {
+  display: inline-block;
+  text-decoration: none;
+  background: #d81b72;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 12px;
+  font-weight: bold;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.landing-button:hover,
+.volver:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.inventario-body {
+  min-height: 100vh;
+  background: #fc7bac;
+  padding: 30px;
+}
+
+.cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.cabecera h1 {
+  margin: 0;
+  color: white;
+}
+
+.contenedor-tarjetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.tarjeta {
+  width: 300px;
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.tarjeta h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.info {
+  font-size: 14px;
+  margin: 6px 0;
+}
+
+.propietario {
+  margin-top: 15px;
+  font-size: 13px;
+  color: #666;
+}
+
+.qr {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.qr img {
+  width: 120px;
+  height: 120px;
+}

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+    <!-- Tipo para el identificador del item -->
+    <xs:simpleType name="TipoID">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="OBJ-[0-9]{3}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Tipo para el nombre del artículo -->
+    <xs:simpleType name="TipoArticulo">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="3"/>
+            <xs:maxLength value="50"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Tipo para la categoría -->
+    <xs:simpleType name="TipoCategoria">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Ropa"/>
+            <xs:enumeration value="Libros"/>
+            <xs:enumeration value="Electrónica"/>
+            <xs:enumeration value="Complemento"/>
+            <xs:enumeration value="Otro"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Tipo para el estado -->
+    <xs:simpleType name="TipoEstado">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Nuevo"/>
+            <xs:enumeration value="Usado"/>
+            <xs:enumeration value="Para reparar"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Tipo para el nombre del propietario -->
+    <xs:simpleType name="TipoNombre">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="3"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Tipo para el curso -->
+    <xs:simpleType name="TipoCurso">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+
+    <!-- Tipo complejo para propietario -->
+    <xs:complexType name="TipoPropietario">
+        <xs:sequence>
+            <xs:element name="nombre" type="TipoNombre"/>
+            <xs:element name="curso" type="TipoCurso"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Tipo complejo para item -->
+    <xs:complexType name="TipoItem">
+        <xs:sequence>
+            <xs:element name="id" type="TipoID"/>
+            <xs:element name="articulo" type="TipoArticulo"/>
+            <xs:element name="categoria" type="TipoCategoria"/>
+            <xs:element name="estado" type="TipoEstado"/>
+            <xs:element name="propietario" type="TipoPropietario"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Elemento raíz -->
+    <xs:element name="inventario">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="item" type="TipoItem" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
